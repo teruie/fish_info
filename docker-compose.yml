@@ -1,14 +1,22 @@
-version: '3'
-
+version: "3.9"
+   
 services:
-  db:
-    image: postgres
-  web:
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+  postgres:
+    image: postgres:13.1
     volumes:
-      - .:/code
+      - db:/var/lib/postgresql/data
+    env_file: env/db.env
+
+  web:
+    build: ./app
+    command: python manage.py runserver 0.0.0.0:8000 
+    volumes:
+      - ./app/:/code
+    env_file: env/settings.env
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - postgres
+
+volumes:
+    db:
