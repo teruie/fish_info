@@ -1,0 +1,40 @@
+.search-eria{
+    box-sizing: border-box;
+    position: absolute;
+    left: 500px;
+    top: 300px;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 500px;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+  }
+  .search-eria input[type="text"]{
+    border: none;
+    height: 2.0em;
+  }
+  .search-eria input[type="text"]:focus {
+    outline: 0;
+  }
+  .search-eria input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    border: none;
+    background: #3879D9;
+    color: #fff;
+    position: absolute;
+    width: 3.5em;
+    height: 3.0em;
+    right:0px;
+    top: -3px;
+    outline : none;
+  }
+
+  .place_margin{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    margin-left: 40px;
+  }
