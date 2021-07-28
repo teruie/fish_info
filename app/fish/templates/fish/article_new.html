@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block content %}
+
+{% block title %}
+新規投稿
+{% endblock %}
+
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/article_new.css' %}">
+</head>
+
+
+<div class="center">
+    <form action="{% url 'fish:article_create' %}" method="POST"enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">作成</button>
+    </form>
+</div>
+
+
+    {% endblock %}
