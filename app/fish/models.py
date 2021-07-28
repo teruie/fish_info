@@ -32,10 +32,6 @@ class Place(models.Model):
 
 class Article(models.Model):
 
-    class Meta:
-        verbose_name = '投稿'
-        verbose_name_plural = '投稿'
-
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False, db_index=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(verbose_name='タイトル',max_length=30)
@@ -48,21 +44,26 @@ class Article(models.Model):
     created_at = models.DateTimeField(verbose_name='作成日',auto_now_add = True) #作成日時
     updated_at = models.DateTimeField(verbose_name='更新日',auto_now = True) #更新日時
 
+    class Meta:
+        verbose_name = '投稿'
+        verbose_name_plural = '投稿'
+
     def __str__(self):
         return str(self.title)
 
 
 
 class Profile(models.Model):
-    class Meta:
-        verbose_name = 'プロフィール'
-        verbose_name_plural = 'プロフィール'
 
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='user_profile')
     user_name = models.CharField(default='ネーム', verbose_name='ユーザーネーム', max_length=10)
     icon = models.ImageField(default='画像が設定されていません', verbose_name='アイコン', upload_to='icon/')
     header = models.ImageField(default='画像が設定されていません', verbose_name='ヘッダー',  upload_to='header/')
     text = models.TextField(default='自己紹介文を入力してください', verbose_name='自己紹介', max_length=50)
+
+    class Meta:
+        verbose_name = 'プロフィール'
+        verbose_name_plural = 'プロフィール'
 
     def __str__(self):
         return str(self.user)
