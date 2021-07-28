@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+場所検索
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<img src="{% static 'img/umi.jpg' %}" class="top_pic">
+
+<h2 class="place_margin">みんながどこで釣っているか参考にしよう！！</h2>
+
+<div>
+
+    <form method="get" action="{% url 'fish:place_result' %}" class="search-eria">
+        <input type="text" size="25" placeholder="場所検索" name="keyword">
+        <input type="submit" value="&#xf002">
+      </form>
+</div>  
+
+<h2 class="index_margin">人気のターゲット</h2>
+ 
+<div class="flex_category">
+    <tr>       
+        <a href="http://0.0.0.0:8000/category_result/?keyword=%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%83%90%E3%82%B9">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_2056.jpeg' %}"></td>
+                <h1 class="category-p">ブラックバス</h1>
+            </div>
+        </a>
+
+        <a href="http://0.0.0.0:8000/category_result/?keyword=%E3%83%88%E3%83%A9%E3%82%A6%E3%83%88">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_3067.jpeg' %}"></td>
+                <h1 class="category-p">トラウト</h1>
+        </div>
+        </a>
+        <a href="http://0.0.0.0:8000/category_result/?keyword=%E3%82%B7%E3%83%BC%E3%83%90%E3%82%B9">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_3071.jpeg' %}"></td>
+                <h1 class="category-p">シーバス</h1>
+        </div>
+        </a>
+    
+        <a href="http://0.0.0.0:8000/category_result/?keyword=%E3%82%A2%E3%82%B8">
+            <div class="border-radius_category">
+                <td><img class="category_img" src="{% static 'img/IMG_0035.jpeg' %}"></td>
+                <h1 class="category-p">アジ</h1>
+            </div>
+        </a>
+
+    </tr>
+    </div>
+
+<h2 class="index_margin">人気のエリア</h2>
+
+<div class="flex_category">
+    <tr>       
+        <a href="{% url 'fish:category_search' %}">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_2056.jpeg' %}"></td>
+                <h1 class="category-p">東京湾</h1>
+        </div>
+        </a>
+
+        <a href="{% url 'fish:category_search' %}">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_3067.jpeg' %}"></td>
+                <h1 class="category-p">琵琶湖</h1>
+        </div>
+        </a>
+        <a href="{% url 'fish:category_search' %}">
+            <div class="border-radius_category">
+            <div class="main-fl"></div>
+                <td><img class="category_img" src="{% static 'img/IMG_3071.jpeg' %}"></td>
+                <h1 class="category-p">駿河湾</h1>
+        </div>
+        </a>
+    
+        <a href="{% url 'fish:place_search' %}">
+            <div class="border-radius_category">
+                <td><img class="category_img" src="{% static 'img/IMG_0035.jpeg' %}"></td>
+                <h1 class="category-p">瀬戸内</h1>
+            </div>
+        </a>
+
+    </tr>
+    </div>
+
+    <footer class="index-footer">
+        　　<ul class="footer-menu">
+
+             <a href="{% url 'fish:index' %}">
+                <li> 利用規約 ｜</li>
+            </a>
+
+             <a href="{% url 'fish:index' %}">
+                <li>ホーム ｜</li>
+            </a>
+
+            <a href="{% url 'fish:index' %}">
+                <li>お問い合わせ </li>
+             </a>
+
+            </ul>
+            
+          </footer>
+
+
+{% endblock %}
