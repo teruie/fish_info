@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+お問い合わせフォーム
+{% endblock %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    <title>Fish - お問い合わせフォーム</title>
+</head>
+
+
+<div class="c">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>お問い合わせ</h1>
+      <p>お問い合わせフォームです。</p>
+      <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">送信</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

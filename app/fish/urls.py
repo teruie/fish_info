@@ -32,4 +32,8 @@ urlpatterns = [
     path('mypage/<int:pk>/', views.UserPageDetailView.as_view(), name='mypage_detail'),
     path('mypage/pading/<int:pk>/', views.UserPadingDetailView.as_view(), name='mypage_pading'),
     path('mypage/<int:pk>/edit', views.UserPageUpdateView.as_view(), name='profile_edit'),
+
+
+    path('contact/', views.ContactFormView.as_view(), name='contact_form'),
+    path('contact/result/', views.ContactResultView.as_view(), name='contact_result'),
 ]
