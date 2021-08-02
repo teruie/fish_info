@@ -153,6 +153,21 @@ class PlaceResultView(ListView):
             messages.success(self.request, '「{}」の検索結果'.format(keyword))
         return queryset
 
+#みんなの釣果
+class EveryFishResultView(ListView):
+    model = Article
+    template_name = 'fish/every_fish_results.html'
+    paginate_by = 24
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['profile_list'] = Profile.objects.all
+        return context
+
+
+    def get_queryset(self):
+        queryset = Article.objects.order_by('-id')
+        return queryset
 
 #Userpage表示
 class UserPageDetailView(DetailView):
@@ -184,21 +199,6 @@ class UserPageUpdateView(UpdateView, LoginRequiredMixin):
     def get_success_url(self):
         return reverse('fish:mypage_detail', kwargs={'pk': self.object.pk})
 
-
-class EveryFishResultView(ListView):
-    model = Article
-    template_name = 'fish/every_fishresults.html'
-    paginate_by = 24
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['profile_list'] = Profile.objects.all
-        return context
-
-
-    def get_queryset(self):
-        queryset = Article.objects.order_by('-id')
-        return queryset
 
 
 #お問い合わせフォーム
