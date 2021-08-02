@@ -38,6 +38,8 @@ PostgreSQL
 【開発環境】
 Docker
 Git
+【主なデザイン】
+Figma
 
 今後行いたいこと
 本番環境の構築
