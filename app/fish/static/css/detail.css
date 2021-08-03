@@ -97,6 +97,12 @@
   position: relative;
 }
 
+.NewPost-parent::after{
+  content: "";
+  display: block;
+  width: 390px;
+}
+
 .NewPost-margin {
 margin-bottom: 40px;
 }
@@ -146,10 +152,16 @@ border: 1px solid #000000;
 }
 
 .position-user-name{
-  position: absolute;
-  left: 30px;
-  top: 830px;
+  margin-left: 40px;
   font-size: 38px;
+}
+
+.name{
+  position: absolute;
+}
+
+.comment_position{
+  margin-left: 60px;
 }
 
 .position-edit{
@@ -168,4 +180,43 @@ border: 1px solid #000000;
 
 .keyword_position{
   margin-left: 40px;
+}
+
+.y_comment{
+  font-size: 20px;
+}
+
+.n_comment{
+  margin-left: 60px;
+  font-size: 20px;
+}
+
+.comment_border{
+  position: relative;
+  border: 1px solid #000000;
+  width: 660px;
+}
+
+.wrapper {
+  position: relative;
+  overflow-y: auto;
+  height: 100px;
+  width: 662px;
+}
+
+.make_name{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.make_created{
+  margin-left: 430px;
+  margin-top: -24px;
+  margin-bottom: 20px;
+}
+
+.make_cpmment{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 20px;
 }

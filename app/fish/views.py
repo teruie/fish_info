@@ -12,7 +12,7 @@ from .models import Article, Category, Place, Profile, Comment
 
 from .forms import ArticleForm, ProfileForm, ContactForm, CommentCreateForm
 
-from django.db.models import Q
+from django.db.models import Q, Count
 
 
 

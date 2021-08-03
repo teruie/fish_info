@@ -53,12 +53,14 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-
     name = models.CharField('名前', max_length=255, default='名無し')
     text = models.TextField('本文')
     target = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='対象記事')
     created_at = models.DateTimeField(verbose_name='作成日',auto_now_add = True)
- 
+
+    class Meta:
+        db_table    = "comment"
+
     def __str__(self):
         return self.text[:20]
 

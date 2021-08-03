@@ -2,18 +2,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
-
 {% block title %}
-
-{% for profile_list in profile_list %}
-{{ profile_list.user_name }}の投稿
-{% endfor %}
-
+    {% for profile_list in profile_list %}
+        {{ profile_list.user_name }}の投稿
+    {% endfor %}
 {% endblock %}
-
-
 
 {% block content %}
 
@@ -27,17 +20,15 @@
     <div class="detail_comment_position">
         <div class="margin">
             {% for profile_list in profile_list %}
-
                 <img src="{{ profile_list.icon.url }}" class="detail-icon">
-
                 <a href="{% url 'fish:mypage_detail' object.user.pk %}">
                     <p class="detail_name">{{ profile_list.user_name }}</p>
                 </a>
                 <p class="profile_size">プロフィールコメント</p>
-                <div class="profile_text"><p>{{ profile_list.text | linebreaksbr}}</p></div>
-                
+                <div class="profile_text">
+                    <p>{{ profile_list.text | linebreaksbr}}</p>
+                </div>
                 <hr width="450" align="left" class="align1">
-
             {% endfor %}
 
         <div class="article_list">
@@ -47,102 +38,111 @@
             <p>場所：{{ object.place }}</p>
         </div>
 
-            <hr width="450" align="left" class="align2">
+        <hr width="450" align="left" class="align2">
 
-            <div class="article_comment">
-                <p class="comment_font">釣果コメント</p>
-                <p>{{ object.fishing_comment| linebreaksbr}}</p>
-            </div>
+        <div class="article_comment">
+            <p class="comment_font">釣果コメント</p>
+            <p>{{ object.fishing_comment| linebreaksbr}}</p>
+        </div>
 
-            <p class="created_time">{{ object.created_at }}</p>
+        <p class="created_time">{{ object.created_at }}</p>
 
-            {% if request.user.id == object.user.id %}
+        {% if request.user.id == object.user.id %}
             <a class="position-edit" href="{% url 'fish:article_edit' object.pk %}">編集</a>
             <a class="position-delete" href="{% url 'fish:article_delete' object.pk%}">消去</a>
         {% endif %}
-         
-        
-        </div>
+
     </div>
+</div>
 
-    <div>
-        {% for comment in comment %}
-        <div class='border-bottom'>{{ comment.name }}　{{ comment.created_at }}</div>
-        <div class='mt-2'>{{ comment.text }}</div>
-        {% endfor %}
-    </div>
+    {% if comment %}
+        <div class="comment_position">
+            <p class="y_comment">コメント</p>
+            <div class="wrapper">
+                <div class="comment_border">
+                    {% for comment in comment %}
+                    {{ comment.object.pk }}
+
+                        <div class="make_name">名前 : {{ comment.name }}</div>
+                      
+                        <div class="make_created">作成日:{{ comment.created_at }}</div>
+                        <div class="make_cpmment">: {{ comment.text }}</div>
+
+                    {% if forloop.last %}
+                    {% else %}
+                        <hr width="658" align="left">
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+    {% else %}
+        <p class="n_comment">コメントはまだありません</p>
+    {% endif %}
+</div>
 
 
-
+<div class="name">
     {% for profile_list in profile_list %}
         <p class="position-user-name">{{ profile_list.user_name }}さんの他の釣果</p>
     {% endfor %}
-
+</div>
 
 <div class="position-post">
     <div class="NewPost-parent">
         {% for fish in article_list %}
-        
-
-        <a href="{% url 'fish:article_detail' fish.pk %}">
-            <div class="NewPost-margin">
-                <div class="new_list_border">
+            <a href="{% url 'fish:article_detail' fish.pk %}">
+                <div class="NewPost-margin">
+                    <div class="new_list_border">
                     <img src="{{ fish.fish_img.url }}" class="new_list_photo">
-                    <div class="new_list_margin">
+                        <div class="new_list_margin">
 
-                        
-
-                        
-                        <div class="new_list_day">
-                            {{ fish.created_at }}
-                        </div>
-
-                    
+                            <div class="new_list_day">
+                                {{ fish.created_at }}
+                            </div>
+                            
                             魚：{{ fish.fish_category }}
-                            <div class="new_list_length">{{ fish.length }}cm</div>
-                        
 
-                        <div class="new_list_place">
-                            {{ fish.place }}
+                            <div class="new_list_length">
+                                {{ fish.length }}cm
+                            </div>
+                            
+                            <div class="new_list_place">
+                                {{ fish.place }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
         {% endfor %}
-        
     </div>
-        
+</div>
 
 <div>
-
     <div class="detail-margin">
         <button type="button" onclick="history.back()">一つ戻る</button>
         <a href="{% url 'fish:mypage_pading' object.user.pk %}">その他の投稿</a>
         <a href="{% url 'fish:index' %}">トップページに戻る</a>
-        
     </div>
-
 </div>
 
 <footer class="index-footer">
     　　<ul class="footer-menu">
 
-         <a href="{% url 'fish:index' %}">
-            <li> 利用規約 ｜</li>
-        </a>
+            <a href="{% url 'fish:index' %}">
+                <li> 利用規約 ｜</li>
+            </a>
 
-         <a href="{% url 'fish:index' %}">
-            <li>ホーム ｜</li>
-        </a>
+            <a href="{% url 'fish:index' %}">
+                <li>ホーム ｜</li>
+            </a>
 
-        <a href="{% url 'fish:contact_form' %}">
-            <li>お問い合わせ </li>
-         </a>
+            <a href="{% url 'fish:contact_form' %}">
+                <li>お問い合わせ </li>
+            </a>
 
         </ul>
         
-      </footer>
-{% endblock %}
+</footer>
 
+{% endblock %}
 </body>
