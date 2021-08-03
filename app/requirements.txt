@@ -4,3 +4,4 @@ django-environ==0.4.5
 pillow==8.2.0
 django-cleanup==5.2.0
 social-auth-app-django
+django-widget-tweaks

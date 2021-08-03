@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from django.contrib import messages
@@ -8,9 +8,9 @@ from django.views.generic.edit import FormView
 
 from django.urls import reverse_lazy, reverse
 
-from .models import Article, Category, Place, Profile
+from .models import Article, Category, Place, Profile, Comment
 
-from .forms import ArticleForm, ProfileForm, ContactForm
+from .forms import ArticleForm, ProfileForm, ContactForm, CommentCreateForm
 
 from django.db.models import Q
 
@@ -58,7 +58,30 @@ class ArticlDetailview(DetailView):
         context = super().get_context_data(*args, **kwargs)
         context['article_list'] = Article.objects.filter(user=self.object.user).order_by('?')[:3]
         context['profile_list'] = Profile.objects.filter(user=self.object.user)
+        context['comment'] = Comment.objects.filter(target=self.object.pk)
         return context
+
+
+class CommentCreate(CreateView):
+    """コメント投稿ページのビュー"""
+    template_name = 'fish/comment_form.html'
+    model = Comment
+    form_class = CommentCreateForm
+
+    def form_valid(self, form):
+        article_pk = self.kwargs['pk']
+        article = get_object_or_404(Article, pk=article_pk)
+        comment = form.save(commit=False)
+        comment.target = article
+        comment.save()
+        return redirect('fish:article_detail', pk=article_pk)
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['article'] = get_object_or_404(Article, pk=self.kwargs['pk'])
+        return context
+
 
 
 #投稿消去

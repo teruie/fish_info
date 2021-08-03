@@ -10,6 +10,9 @@ urlpatterns = [
     path('fish/new/', views.ArticleCreateView.as_view(), name='article_create'),
     #投稿詳細
     path('detail/<uuid:pk>/', views.ArticlDetailview.as_view(), name='article_detail'),
+    #コメント投稿
+    path('detail/<uuid:pk>/comment/', views.CommentCreate.as_view(), name='comment_create'),
+
     #投稿編集
     path('edit/<uuid:pk>/', views.ArticleUpdateView.as_view(), name='article_edit'),
     #投稿消去
