@@ -1,0 +1,41 @@
+<!doctype html>
+{% load static %}
+
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      {% block css %}{% endblock %}
+        <title>Fish - {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+      <header class="header-color">
+
+        <div class="container">
+        <a href="{% url 'fish:index' %}">
+          <h1 class="header-h1">Fish</h1>
+        </a>
+            <div class="header-search">
+                <form method="GET" action="{% url 'fish:search' %}" class="search_container">
+                    <input type="text" size="25" placeholder="フリーワード検索" name="keyword">
+                    <input type="submit" value="&#xf002">
+                </form>
+
+                {% if request.user.is_authenticated %}
+                    <a class="btn-gradient-radius" href="{% url 'accounts:logout' %}">ログアウト</a>
+                    <a class="btn-gradient-radius" href="{% url 'fish:mypage_detail' user.pk %}">MyPage</a>
+                    <a class="btn-gradient-radius" href="{% url 'fish:article_create' %}">投稿</a>
+                {% else %}
+                    <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'">Twitterログイン</button>
+                {% endif %}
+            </div>
+        </div>
+      </header>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+      
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/mypading.css' %}">
+
+
+
+<p class="position-user-name">{{ object.user_name }}さんの釣果一覧</p>
+<div class="position-post">
+    <div class="NewPost-parent">
+        {% for fish in Article_list %}
+        
+
+        <a href="{% url 'fish:article_detail' fish.pk %}">
+            <div class="NewPost-margin">
+                <div class="new_list_border">
+                    <img src="{{ fish.fish_img.url }}" class="new_list_photo">
+                    <div class="new_list_margin">
+
+                        
+
+                        
+                        <div class="new_list_day">
+                            {{ fish.created_at }}
+                        </div>
+
+                    
+                            魚：{{ fish.fish_category }}
+                            <div class="new_list_length">{{ fish.length }}cm</div>
+                        
+
+                        <div class="new_list_place">
+                            {{ fish.place }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        
+    </div>
+
+    <a href="{% url 'fish:index' %}">トップページに戻る</a>
+
+<div>
+</div>
+</div>
+<footer class="index-footer">
+    　　<ul class="footer-menu">
+
+         <a href="{% url 'fish:index' %}">
+            <li> 利用規約 ｜</li>
+        </a>
+
+         <a href="{% url 'fish:index' %}">
+            <li>ホーム ｜</li>
+        </a>
+
+        <a href="{% url 'fish:index' %}">
+            <li>お問い合わせ </li>
+         </a>
+
+        </ul>
+        
+      </footer>
+
+{% endblock %}

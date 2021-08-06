@@ -1,0 +1,134 @@
+.mypage-header{
+    width: 1425px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .mypage-icon{
+      border-radius: 50%;
+      width:  150px;
+      height: 150px;
+      position: absolute;
+      left: 100px;
+      top: 350px;
+  }
+
+  .NewPost-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative;
+}
+
+.NewPost-parent::after{
+    content: "";
+    display: block;
+    width: 390px;
+}
+
+.NewPost-margin {
+  margin-bottom: 40px;
+}
+
+.new_list_border {
+  border: 1px solid #000000;
+  width: 390;
+  height: 450;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}
+
+.new_list_photo {
+  width: 390px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 9px 9px 0px 0px;
+}
+
+.new_list_margin{
+  margin-left: 15px;
+}
+
+.new_list_day{
+  position: static;
+}
+
+.new_list_length{
+  position: absolute;
+  left: 300px;
+  bottom: 23px;
+}
+.new_list_place{
+  position: relative;
+}
+
+.profile-pading{
+  padding-left: 40px;
+  border: 1px solid #000000;
+    border-radius: 40px 40px 40px 40px;
+    width: 250px;
+    height: 400px;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}
+
+.position-post{
+  margin-top: 600px;
+}
+
+.position-name-tag{
+  position: absolute;
+  left: 300px;
+  top: 445px;
+  font-size: 22px;
+}
+
+.position-name{
+  position: absolute;
+  left: 500px;
+  top: 380px;
+  font-size: 50px;
+}
+
+.positions-comment-tag{
+  position: absolute;
+  left: 175px;
+  top: 510px;
+  font-size: 22px;
+}
+
+
+.position-comment{
+  position: absolute;
+  left: 200px;
+  top: 550px;
+  font-size: 28px;
+}
+
+.position-user-name{
+  position: absolute;
+  left: 60px;
+    top: 750px;
+    font-size: 38px;
+}
+
+.align1{
+  position: absolute;
+  left: 170px;
+  top: 492px;
+}
+
+.align2{
+  position: absolute;
+  left: 170px;
+  top: 680px;
+}
+
+.edit-btn{
+  position: absolute;
+  top: 668px;
+    left: 940px;
+}
