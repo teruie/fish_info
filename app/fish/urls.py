@@ -4,6 +4,7 @@ from . import views
 app_name = 'fish'
 
 urlpatterns = [
+    #トップページ
     path('', views.index, name='index'),
 
     #投稿作成
@@ -17,6 +18,11 @@ urlpatterns = [
     path('edit/<uuid:pk>/', views.article_edit, name='article_edit'),
     #投稿消去
     path('detail/<uuid:pk>/delete/',views.article_delete,name='article_delete'),
+
+    #カテゴリーの登録
+    path('category_create', views.category_create, name='category_create'),
+    #場所の登録
+    path('place_create', views.place_create, name='place_create'),
 
     #なんでも検索
     path('search/', views.search, name='search'),
@@ -37,7 +43,7 @@ urlpatterns = [
     path('mypage/pading/<int:pk>/', views.mypage_pading, name='mypage_pading'),
     path('mypage/<int:pk>/edit', views.profile_edit, name='profile_edit'),
 
-
+    #コンタクトのurl
     path('contact/', views.contact_form, name='contact_form'),
     path('contact/result/', views.contact_result, name='contact_result'),
 ]

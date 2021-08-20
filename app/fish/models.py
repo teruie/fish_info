@@ -7,7 +7,7 @@ import uuid
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(verbose_name='魚種入力', max_length=20)
     
     class Meta:
         verbose_name = 'カテゴリー'
@@ -19,7 +19,7 @@ class Category(models.Model):
 
 
 class Place(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(verbose_name='場所入力', max_length=20)
 
     class Meta:
         verbose_name = '場所'

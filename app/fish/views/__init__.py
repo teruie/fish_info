@@ -25,3 +25,7 @@ from .contact import(
 from .home import(
     every_result, index
 )
+
+from .create import(
+    category_create, place_create
+)
