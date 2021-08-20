@@ -1,26 +1,8 @@
 from django import forms
 from django.conf import settings
-from .models import Article, Category, Place, Profile, Comment
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 
-
-class ArticleForm(forms.ModelForm):
-    class Meta:
-        model = Article
-        fields = ['fish_category', 'fishing_comment', 'fish_img','length','weight','place']
-
-
-class CommentCreateForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        exclude = ('target', 'created_at')
-
-
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['user_name', 'icon', 'header', 'text']
 
 
 class ContactForm(forms.Form):

@@ -4,39 +4,46 @@ from . import views
 app_name = 'fish'
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    #トップページ
+    path('', views.index, name='index'),
 
     #投稿作成
-    path('fish/new/', views.ArticleCreateView.as_view(), name='article_create'),
+    path('fish/new/', views.article_create, name='article_create'),
     #投稿詳細
-    path('detail/<uuid:pk>/', views.ArticlDetailview.as_view(), name='article_detail'),
+    path('detail/<uuid:pk>/', views.article_detail, name='article_detail'),
     #コメント投稿
-    path('detail/<uuid:pk>/comment/', views.CommentCreate.as_view(), name='comment_create'),
+    path('detail/<uuid:pk>/comment/', views.comment_create, name='comment_create'),
 
     #投稿編集
-    path('edit/<uuid:pk>/', views.ArticleUpdateView.as_view(), name='article_edit'),
+    path('edit/<uuid:pk>/', views.article_edit, name='article_edit'),
     #投稿消去
-    path('detail/<uuid:pk>/delete/',views.ArticleDeleteview.as_view(),name='article_delete'),
+    path('detail/<uuid:pk>/delete/',views.article_delete,name='article_delete'),
+
+    #カテゴリーの登録
+    path('category_create', views.category_create, name='category_create'),
+    #場所の登録
+    path('place_create', views.place_create, name='place_create'),
 
     #なんでも検索
-    path('search/', views.SearchView.as_view(), name='search'),
+    path('search/', views.search, name='search'),
     #魚種検索
-    path('category_search/', views.CategorySearchView.as_view(), name='category_search'),
+    path('category_search/', views.category_search, name='category_search'),
     #魚種検索結果
-    path('category_result/', views.CategoryResultView.as_view(), name='category_result'),
+    path('category_result/', views.category_result, name='category_result'),
     #場所検索
-    path('place_search/', views.PlaceSearchView.as_view(), name='place_search'),
+    path('place_search/', views.place_search, name='place_search'),
     #場所検索結果
-    path('place_result/', views.PlaceResultView.as_view(), name='place_result'),
+    path('place_result/', views.place_result, name='place_result'),
+
     #みんなの釣果
-    path('every_result', views.EveryFishResultView.as_view(), name='every_result'),
+    path('every_result', views.every_result, name='every_result'),
     
     #Userページ
-    path('mypage/<int:pk>/', views.UserPageDetailView.as_view(), name='mypage_detail'),
-    path('mypage/pading/<int:pk>/', views.UserPadingDetailView.as_view(), name='mypage_pading'),
-    path('mypage/<int:pk>/edit', views.UserPageUpdateView.as_view(), name='profile_edit'),
+    path('mypage/<int:pk>/', views.mypage_detail, name='mypage_detail'),
+    path('mypage/pading/<int:pk>/', views.mypage_pading, name='mypage_pading'),
+    path('mypage/<int:pk>/edit', views.profile_edit, name='profile_edit'),
 
-
-    path('contact/', views.ContactFormView.as_view(), name='contact_form'),
-    path('contact/result/', views.ContactResultView.as_view(), name='contact_result'),
+    #コンタクトのurl
+    path('contact/', views.contact_form, name='contact_form'),
+    path('contact/result/', views.contact_result, name='contact_result'),
 ]
