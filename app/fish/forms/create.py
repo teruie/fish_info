@@ -8,6 +8,10 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ['fish_category', 'fishing_comment', 'fish_img','length','weight','place']
 
+        widgets = {
+            'fishing_comment': forms.Textarea(attrs={'class': 'text',}),
+        }
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -20,10 +24,16 @@ class CategoryForm(forms.ModelForm):
         model = Category
         fields = ['title']
 
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'textinputclass',}),
+        }
+
 
 class PlaceForm(forms.ModelForm):
     class Meta:
         model = Place
         fields = ['title']
 
-
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'textinputclass',}),
+        }
