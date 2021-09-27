@@ -12,5 +12,6 @@ then
 fi
 
 python3 manage.py migrate
+python manage.py collectstatic --no-input --clear
 
 exec "$@"

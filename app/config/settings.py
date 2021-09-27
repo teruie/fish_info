@@ -19,7 +19,6 @@ DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -150,3 +149,4 @@ EMAIL_USE_TLS = True
 AUTH_USER_MODEL = 'accounts.User'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
