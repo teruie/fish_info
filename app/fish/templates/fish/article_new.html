@@ -2,12 +2,13 @@
 {% extends 'base.html' %}
 
 
-{% load static %}
-{% block content %}
-
 {% block title %}
 新規投稿
 {% endblock %}
+
+{% load static %}
+{% block content %}
+
 
 <head>
 <link rel="stylesheet" type="text/css" href="{% static 'css/article_new.css' %}">
@@ -22,5 +23,7 @@
     </form>
 </div>
 
+<a href="{% url 'fish:category_create' %}">お探しの魚種がない方はこちらから登録可能</a>
+<a href="{% url 'fish:place_create' %}">お探しの場所がない方はこちらから登録可能</a>
 
     {% endblock %}

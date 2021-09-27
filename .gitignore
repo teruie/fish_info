@@ -3,3 +3,5 @@ __pycache__
 media/
 .DS_Store
 data
+.env
+static

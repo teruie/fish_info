@@ -17,7 +17,7 @@ from fish.forms import CategoryForm, PlaceForm
 
 class CategoryCreateView(CreateView, LoginRequiredMixin):
     template_name = 'create/category_create.html'
-    success_url = reverse_lazy('fish:index')
+    success_url = reverse_lazy('fish:article_create')
     form_class = CategoryForm
     model = Category
 
@@ -26,7 +26,7 @@ class CategoryCreateView(CreateView, LoginRequiredMixin):
         form = form.save(commit=False)
         form.user = self.request.user
         form.save()
-        return redirect('fish:index')
+        return redirect('fish:article_create')
 
 category_create = CategoryCreateView.as_view()
 
@@ -34,7 +34,7 @@ category_create = CategoryCreateView.as_view()
 
 class PlaceCreateView(CreateView, LoginRequiredMixin):
     template_name = 'create/place_create.html'
-    success_url = reverse_lazy('fish:index')
+    success_url = reverse_lazy('fish:article_create')
     form_class = PlaceForm
     model = Place
 
@@ -43,6 +43,6 @@ class PlaceCreateView(CreateView, LoginRequiredMixin):
         form = form.save(commit=False)
         form.user = self.request.user
         form.save()
-        return redirect('fish:index')
+        return redirect('fish:article_create')
 
 place_create = PlaceCreateView.as_view()

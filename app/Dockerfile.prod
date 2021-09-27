@@ -1,0 +1,15 @@
+FROM python:3.8-slim
+
+ENV PYTHONUNBUFFERED=1
+WORKDIR /code
+
+COPY requirements.prod.txt /code/
+COPY ./entrypoint.sh /code/app/entrypoint.prod.sh
+
+RUN pip install -r requirements.prod.txt
+RUN apt update
+RUN apt install -y netcat
+
+COPY . /code/
+
+ENTRYPOINT ["/bin/bash", "/code/entrypoint.prod.sh"]
