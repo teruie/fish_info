@@ -49,7 +49,7 @@ class Article(models.Model):
         verbose_name_plural = '投稿'
 
     def __str__(self):
-        return str(self.title)
+        return str(self.id)
         
 
 

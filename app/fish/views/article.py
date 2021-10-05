@@ -25,10 +25,12 @@ class ArticleCreateView(CreateView, LoginRequiredMixin):
         form = form.save(commit=False)
         form.user = self.request.user
         form.save()
-        return redirect('fish:index')
+        article = Article.objects.latest("created_at")
+        article_id = str(article)
+        url = '/detail/'
+        return redirect(to=url + article_id)
 
 article_create = ArticleCreateView.as_view()
-
 
 
 #投稿画面詳細
