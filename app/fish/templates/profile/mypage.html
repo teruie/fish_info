@@ -14,9 +14,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
 
 
-
+<div class="header_box">
     <img src="{{ object.header.url }}" class="mypage-header">
-    
+</div>
+
         <br><img src="{{ object.icon.url }}" class="mypage-icon">
         <p class="position-name">{{ object.user_name }}</p>
 
@@ -24,7 +25,7 @@
         <p class="positions-comment-tag">自己紹介</p>
         <p class="position-comment">{{ object.text| linebreaksbr}}</p>
 
-        <hr width="800" align="left" class="align2">
+        <hr width="720" align="left" class="align2">
 
         {% if request.user.id == object.user.id %}
         <a class="edit-btn" href="{% url 'fish:profile_edit' user.pk %}">プロフィールを編集</a>
@@ -64,13 +65,12 @@
         {% endfor %}
         
     </div>
-
+</div>
+</div>
     <a href="{% url 'fish:mypage_pading' object.user.pk %}">その他の投稿</a>
     <a href="{% url 'fish:index' %}">トップページに戻る</a>
 
-<div>
-</div>
-</div>
+
 <footer class="index-footer">
     　　<ul class="footer-menu">
 
