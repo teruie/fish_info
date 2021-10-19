@@ -150,3 +150,24 @@ AUTH_USER_MODEL = 'accounts.User'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
+
+DEPLOY = os.environ.get('DEPLOY')
+if DEPLOY:
+    # todo: 適切な値を調査
+    #SECURE_HSTS_SECONDS = 60 
+    # サブドメインをhstsを含めるか？
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    # todo: 調べる
+    SECURE_CONTENT_TYPE_NOSNIFF = False
+    # Trueの場合、SecurityMiddlewareが有効になる
+    SECURE_BROWSER_XSS_FILTER = True
+    # Trueの場合、HTTPS以外のすべてのリクエストをHTTPSにリダイレクトされる
+    SECURE_SSL_REDIRECT = False
+    # Trueの場合、ブラウザがCookieがHTTPS接続でのみ送信されることを保証する可能性がある
+    SESSION_COOKIE_SECURE = False
+    # Trueの場合、ブラウザがCookieがHTTPS接続でのみ送信されることを保証する可能性がある
+    CSRF_COOKIE_SECURE = False
+
+    X_FRAME_OPTIONS = 'SAMEORIGIN'
+    
+    SECURE_HSTS_PRELOAD = False
