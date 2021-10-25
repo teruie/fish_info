@@ -39,9 +39,9 @@ urlpatterns = [
     path('every_result', views.every_result, name='every_result'),
     
     #Userページ
-    path('mypage/<int:pk>/', views.mypage_detail, name='mypage_detail'),
-    path('mypage/pading/<int:pk>/', views.mypage_pading, name='mypage_pading'),
-    path('mypage/<int:pk>/edit', views.profile_edit, name='profile_edit'),
+    path('users/<uuid:pk>/', views.mypage_detail, name='mypage_detail'),
+    path('users/pading/<uuid:pk>/', views.mypage_pading, name='mypage_pading'),
+    path('users/<uuid:pk>/edit', views.profile_edit, name='profile_edit'),
 
     #コンタクトのurl
     path('contact/', views.contact_form, name='contact_form'),

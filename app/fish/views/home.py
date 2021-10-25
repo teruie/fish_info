@@ -5,7 +5,6 @@ from fish.models import Article, Profile
 
 
 
-
 class IndexView(ListView):
     model = Article
     paginate_by = 6
@@ -13,7 +12,7 @@ class IndexView(ListView):
     
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['profile_list'] = Profile.objects.all
+        context['profile_list'] = Profile.objects.filter(user=self.request.user)
         return context
 
     def get_queryset(self):
