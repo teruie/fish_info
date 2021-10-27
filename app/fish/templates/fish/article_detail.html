@@ -22,9 +22,9 @@
             {% for profile_list in profile_list %}
                 <img src="{{ profile_list.icon.url }}" class="detail-icon">
                 
-                {% for user in object_list %}
-                <a href="{% url 'fish:mypage_detail' object.user.pk %}">
-                {% endfor %}
+               
+                <a href="{% url 'fish:mypage_detail' profile_list.pk %}">
+            
 
                     <p class="detail_name">{{ profile_list.user_name }}</p>
                 </a>
