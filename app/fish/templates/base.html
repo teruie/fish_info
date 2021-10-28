@@ -23,9 +23,11 @@
                 </form>
 
                 {% if request.user.is_authenticated %}
+                {% for user in profile_list %}
                     <a class="btn-gradient-radius" href="{% url 'accounts:logout' %}">ログアウト</a>
                     <a class="btn-gradient-radius" href="{% url 'fish:mypage_detail' user.pk %}">MyPage</a>
                     <a class="btn-gradient-radius" href="{% url 'fish:article_create' %}">投稿</a>
+                {% endfor %}
                 {% else %}
                     <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'">Twitterログイン</button>
                 {% endif %}

@@ -21,7 +21,11 @@
         <div class="margin">
             {% for profile_list in profile_list %}
                 <img src="{{ profile_list.icon.url }}" class="detail-icon">
-                <a href="{% url 'fish:mypage_detail' object.user.pk %}">
+                
+               
+                <a href="{% url 'fish:mypage_detail' profile_list.pk %}">
+            
+
                     <p class="detail_name">{{ profile_list.user_name }}</p>
                 </a>
                 <p class="profile_size">プロフィールコメント</p>
@@ -77,6 +81,7 @@
                 </div>
     {% else %}
         <p class="n_comment">コメントはまだありません</p>
+        <a class="#" href="{% url 'fish:comment_create' object.pk %}">コメントをする</a>
     {% endif %}
 </div>
 
@@ -120,7 +125,9 @@
 <div>
     <div class="detail-margin">
         <button type="button" onclick="history.back()">一つ戻る</button>
+        {% for user in object_list %}
         <a href="{% url 'fish:mypage_pading' object.user.pk %}">その他の投稿</a>
+        {% endfor %}
         <a href="{% url 'fish:index' %}">トップページに戻る</a>
     </div>
 </div>
