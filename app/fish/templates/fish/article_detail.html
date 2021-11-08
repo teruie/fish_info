@@ -62,6 +62,7 @@
     {% if comment %}
         <div class="comment_position">
             <p class="y_comment">コメント</p>
+            <a class="y_comment" href="{% url 'fish:comment_create' object.pk %}">続けてコメントする</a>
             <div class="wrapper">
                 <div class="comment_border">
                     {% for comment in comment %}
@@ -81,7 +82,7 @@
                 </div>
     {% else %}
         <p class="n_comment">コメントはまだありません</p>
-        <a class="#" href="{% url 'fish:comment_create' object.pk %}">コメントをする</a>
+        <a class="n_comment" href="{% url 'fish:comment_create' object.pk %}">コメントをする</a>
     {% endif %}
 </div>
 
