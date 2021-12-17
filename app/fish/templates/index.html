@@ -8,8 +8,9 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <img src="{% static 'img/umi.jpg' %}" class="top_pic">
 
 <h2 class="title-h2">このサイトを使って自分の釣りをレベルアップしよう！</h2>
@@ -41,8 +42,8 @@
 </div>
 
     <div class="index_margin_position">
-        <h2 class="index_margin">最新の投稿</h2>
-        <p class="index_margin">みんなの状況を参考に自分の釣りを作り出していこう！</p>
+        <h2 class="index_margin_title">最新の投稿</h2>
+        <p class="index_margin_baby">みんなの状況を参考に自分の釣りを作り出していこう！</p>
     </div>　　
 
     <div class="NewPost-parent">
@@ -62,9 +63,13 @@
                             {{ fish.created_at }}
                         </div>
 
-                    
+                        <div class="new_fish_category">
                             魚：{{ fish.fish_category }}
-                            <div class="new_list_length">{{ fish.length }}cm</div>
+                        </div>    
+                        
+                        <div class="new_list_length">
+                            {{ fish.length }}cm
+                        </div>
                         
 
                         <div class="new_list_place">
@@ -120,7 +125,7 @@
     </div>
 
 <div class="postion_place">
-    <h2 class="index_margin">人気のエリア</h2>
+    <h2 class="index_margin2">人気のエリア</h2>
 </div>
 
 <div class="flex_place">
