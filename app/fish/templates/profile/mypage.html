@@ -10,7 +10,7 @@
 {% block content %}
 
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}">
 
 
@@ -19,7 +19,7 @@
 </div>
 
         <br><img src="{{ object.icon.url }}" class="mypage-icon">
-        <p class="position-name">{{ object.user_name }}</p>
+        <p class="position-name">名前：{{ object.user_name }}</p>
 
 
         <p class="positions-comment-tag">自己紹介</p>

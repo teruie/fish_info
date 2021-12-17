@@ -146,3 +146,124 @@
 .header_box{
   text-align: center;
 }
+
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  .mypage-header{
+    width: 100%;
+    height: 150px;
+  }
+  .header_box{
+    width: 100%;
+  }
+
+  .mypage-icon{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: static;
+    margin-left: 20px;
+    margin-top: -30px;
+  }
+
+  .position-name {
+    position: static;
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: 25px;
+}
+
+.edit-btn {
+  display: inline-block;
+  padding: 5px 5px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-image: linear-gradient(
+45deg, #C8C8C8 0%, #C8C8C8 100%);
+  transition: .4s;
+  border: 1px solid #000000;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  top: 290px;
+  left: 240px;
+}
+
+.positions-comment-tag {
+  position: absolute;
+  left: 25px;
+  top: 360px;
+  font-size: 15px;
+}
+
+.position-comment {
+  position: absolute;
+  left: 100px;
+  top: 360px;
+  font-size: 15px;
+}
+
+.position-user-name {
+  position: absolute;
+  left: 20px;
+  top: 400px;
+  font-size: 20px;
+}
+
+.align2 {
+  position: absolute;
+  top: 390px;
+  left: 26px;
+  width: 335px;
+}
+
+.NewPost-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.new_list_photo {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 9px 9px 0px 0px;
+  border-bottom: 1px solid #000000;
+}
+
+.new_list_length {
+  position: absolute;
+  left: 300px;
+  bottom: 23px;
+  position: static;
+}
+
+.new_list_day {
+  position: static;
+  display: none;
+}
+
+.new_fish_category{
+  font-size: 1px;
+}
+.new_list_length{
+  font-size: 1px;
+}
+
+.new_list_place{
+  font-size: 1px;
+}
+
+.position-post {
+  margin-top: 120px;
+}
+
+}
