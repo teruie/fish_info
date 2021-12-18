@@ -80,4 +80,23 @@
 </nav>
 <a href="{% url 'fish:index' %}">トップページに戻る</a>
 
+    <footer class="index-footer">
+    　　<ul class="footer-menu">
+
+         <a href="{% url 'fish:index' %}">
+            <li> 利用規約 ｜</li>
+        </a>
+
+         <a href="{% url 'fish:index' %}">
+            <li>ホーム ｜</li>
+        </a>
+
+        <a href="{% url 'fish:contact_form' %}">
+            <li>お問い合わせ </li>
+         </a>
+
+        </ul>
+        
+      </footer>
+
     {% endblock %}
