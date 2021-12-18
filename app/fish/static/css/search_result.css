@@ -61,3 +61,13 @@
   .keyword_position{
     margin-left: 40px;
   }
+
+  @media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+  .place_margin {
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    font-size: 20px;
+}
+  }

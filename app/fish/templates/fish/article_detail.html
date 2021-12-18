@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
 
 <body>
@@ -46,7 +46,7 @@
 
         <div class="article_comment">
             <p class="comment_font">釣果コメント</p>
-            <p>{{ object.fishing_comment| linebreaksbr}}</p>
+            <p class="comment_posi">{{ object.fishing_comment| linebreaksbr}}</p>
         </div>
 
         <p class="created_time">{{ object.created_at }}</p>
@@ -75,7 +75,7 @@
 
                     {% if forloop.last %}
                     {% else %}
-                        <hr width="658" align="left">
+                        <hr class="hr2" width="658" align="left">
                     {% endif %}
                     {% endfor %}
                     </div>

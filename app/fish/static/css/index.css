@@ -164,6 +164,7 @@
     font-size: 15px;
     top: 170px;
     left: 0px;
+    margin-left: 20px;
 }
 
     .flex {
@@ -281,7 +282,7 @@
 
 .index_margin {
   margin-left: 10px;
-  margin-top: -20px;
+  margin-top: 5px;
   font-size: 15px;
 }
 
