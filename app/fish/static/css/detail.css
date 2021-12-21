@@ -463,4 +463,18 @@ border: 1px solid #000000;
   top: 480px;
   width: 340px;
 }
+
+.search-eria {
+  box-sizing: border-box;
+  position: absolute;
+  left: 260px;
+  top: 300px;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 500px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+}
 }
