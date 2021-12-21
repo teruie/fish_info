@@ -121,3 +121,56 @@ display: inline;
 	margin: .2em 0 0 .14em;
 	transform: rotate(45deg);
 }
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+.header-h1{
+  margin-left: 10px;
+}
+
+.header-search { 
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+} 
+
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 5px 5px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-image: linear-gradient(45deg, #C8C8C8 0%, #C8C8C8 100%);
+  transition: .4s;
+  border: 1px solid #000000;
+  font-size: 1px;
+  text-align: center;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #8C8C87 0%, #8C8C87 100%);
+}
+
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 265px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+
+  display: none;
+}
+}

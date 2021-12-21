@@ -61,3 +61,54 @@
   .keyword_position{
     margin-left: 40px;
   }
+
+  @media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+  .place_margin {
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    font-size: 20px;
+}
+
+.NewPost-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.new_list_photo {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 9px 9px 0px 0px;
+  border-bottom: 1px solid #000000;
+}
+
+.new_list_length {
+  position: absolute;
+  left: 300px;
+  bottom: 23px;
+  position: static;
+}
+
+.new_list_day {
+  position: static;
+  display: none;
+}
+
+.new_fish_category{
+  font-size: 1px;
+}
+.new_list_length{
+  font-size: 1px;
+}
+
+.new_list_place{
+  font-size: 1px;
+}
+}

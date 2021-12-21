@@ -67,14 +67,14 @@
 }
 
 .comment_font{
-  font-size: 14px;
-  
+  font-size: 20px;
+    top: 477px;
 }
 
 .article_comment{
-  position: absolute;
-  bottom: 110px;
-  font-size: 22px;
+  bottom: 90px;
+    font-size: 22px;
+    position: absolute;
 }
 
 .created_time{
@@ -219,4 +219,293 @@ border: 1px solid #000000;
   margin-bottom: 20px;
   margin-left: 20px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .detail_photo {
+    margin-top: 10px;
+    margin-left: 0px;
+    background-color: rgb(89, 89, 89);
+    width: 160px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.detail_comment_position {
+  position: absolute;
+  top: 90px;
+  left: 200px;
+  border: 1px solid #000000;
+  border-radius: 40px 40px 40px 40px;
+  width: 150px;
+  height: 300px;
+}
+
+.article_list {
+  font-size: 15px;
+  position: static;
+}
+
+.comment_font {
+  font-size: 14px;
+}
+
+.detail_name {
+  font-size: 22px;
+    position: absolute;
+    left: 82px;
+    bottom: 220px;
+}
+
+.comment_posi{
+  margin-top: -7px;
+  font-size: 17px;
+}
+
+.profile_text {
+  display: none;
+}
+
+.align1 {
+  display: none;
+}
+
+.created_time {
+  display: none;
+}
+
+.detail-icon {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.margin {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.profile_size {
+  display: none;
+}
+
+.article_comment {
+  position: relative;
+    bottom: 5px;
+    font-size: 22px;
+}
+
+.position-delete {
+  position: absolute;
+  left: 115px;
+  top: 277px;
+  font-size: 4px;
+}
+
+.position-edit {
+  position: absolute;
+  left: 90px;
+  top: 277px;
+  font-size: 4px;
+}
+
+.align2 {
+  position: absolute;
+  width: 116px;
+  top: 60px;
+}
+
+.NewPost-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -10px;
+  position: relative;
+}
+
+.new_list_photo {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 9px 9px 0px 0px;
+  border-bottom: 1px solid #000000;
+}
+
+.new_list_length {
+  position: absolute;
+  left: 300px;
+  bottom: 23px;
+  position: static;
+}
+
+.new_list_day {
+  position: static;
+  display: none;
+}
+
+.n_comment {
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.position-user-name {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.position-post {
+  margin-top: 80px;
+}
+
+.comment_position {
+  margin-left: 20px;
+}
+
+.comment_border {
+  position: relative;
+  border: 1px solid #000000;
+  width: 330px;
+}
+
+.make_created {
+  margin-left: 130px;
+  margin-top: -24px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.wrapper {
+  position: relative;
+  overflow-y: auto;
+  height: 100px;
+  width: 360px;
+}
+
+.hr2{
+  width: 328px;
+}
+
+.detail-margin {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.all_fish{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  /* 480~~~768px以下に適用されるCSS（ipad用） */
+  .new_list_photo {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 9px 9px 0px 0px;
+  }
+  
+  .new_list_length {
+    position: absolute;
+    left: 135px;
+    bottom: 23px;
+  }
+
+  .border-radius {
+    border: 1px solid #000000;
+    width: 230px;
+    height: 270px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.img-radius {
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid #000000;
+  width: 230px;
+  height: 170px;
+}
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  .NewPost-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: -15px;
+    position: relative;
+  }
+  
+  .new_list_photo {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 9px 9px 0px 0px;
+    border-bottom: 1px solid #000000;
+  }
+  
+  .new_list_length {
+    position: absolute;
+    left: 245px;
+    bottom: 3px;
+  }
+
+  .detail_photo {
+    margin-top: 30px;
+    background-color: rgb(89, 89, 89);
+    width: 510px;
+    height: 700px;
+    object-fit: contain;
+}
+
+.detail_comment_position {
+  position: absolute;
+  top: 120px;
+  left: 596px;
+  border: 1px solid #000000;
+  border-radius: 40px 40px 40px 40px;
+  width: 400px;
+  height: 700px;
+}
+.created_time {
+  position: absolute;
+  left: 220px;
+  bottom: 27px;
+}
+
+.align1 {
+  position: absolute;
+  top: 240px;
+  width: 340px;
+}
+.align2 {
+  position: absolute;
+  top: 480px;
+  width: 340px;
+}
+
+.search-eria {
+  box-sizing: border-box;
+  position: absolute;
+  left: 260px;
+  top: 300px;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 500px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+}
 }

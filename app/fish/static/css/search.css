@@ -38,3 +38,74 @@
     left: 100px;
     margin-left: 40px;
   }
+
+  @media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .place_margin {
+      position: absolute;
+      top: 119px;
+      left: 15px;
+      font-size: 13px;
+  }
+
+.search-eria {
+  box-sizing: border-box;
+  position: absolute;
+  left: 47px;
+  top: 172px;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 280px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+}
+  }
+
+
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    /* 480~~~768px以下に適用されるCSS（ipad用） */
+    .search-eria {
+      box-sizing: border-box;
+      position: absolute;
+      left: 150px;
+      top: 320px;
+      border: 1px solid #999;
+      padding: 3px 10px;
+      border-radius: 20px;
+      height: 2.3em;
+      width: 500px;
+      overflow: hidden;
+      background: rgb(255, 255, 255);
+  }
+
+  .index_margin {
+    margin-left: 40px;
+    margin-top: 15px;
+}
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* 769~~~1024px以下に適用されるCSS（スマホ用） */
+  
+    .search-eria {
+      box-sizing: border-box;
+      position: absolute;
+      left: 250px;
+      top: 300px;
+      border: 1px solid #999;
+      padding: 3px 10px;
+      border-radius: 20px;
+      height: 2.3em;
+      width: 500px;
+      overflow: hidden;
+      background: rgb(255, 255, 255);
+    }
+
+    .index_margin {
+      margin-left: 40px;
+      margin-top: 20px;
+  }
+  }
+  

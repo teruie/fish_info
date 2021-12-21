@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block css %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="{% static 'css/search_result.css' %}">
 {% endblock %}
 
@@ -87,7 +88,6 @@
 </div>
         <a href="{% url 'fish:index' %}">トップページに戻る</a>
 
-    {% endblock %}
  
     <footer class="index-footer">
         　　<ul class="footer-menu">
@@ -107,3 +107,5 @@
             </ul>
             
           </footer>
+
+          {% endblock %}
