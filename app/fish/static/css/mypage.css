@@ -269,6 +269,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   /* 480px以下に適用されるCSS（スマホ用） */
+  
   .mypage-header {
     width: 768px;
     height: 250px;
