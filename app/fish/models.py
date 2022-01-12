@@ -12,6 +12,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'カテゴリー'
         verbose_name_plural = 'カテゴリー'
+        ordering = ('title',)
 
     def __str__(self):
       return str(self.title) 
