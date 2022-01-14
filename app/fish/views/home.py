@@ -31,7 +31,7 @@ class EveryFishResultView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['profile_list'] = Profile.objects.all
+        context['profile_list'] = Profile.objects.filter(user_id=self.request.user.id)
         return context
 
 
