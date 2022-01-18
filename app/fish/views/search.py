@@ -13,7 +13,7 @@ class SearchView(ListView):
     paginate_by = 24
 
     def get_queryset(self):
-        queryset = Article.objects.order_by('-id')
+        queryset = Article.objects.order_by('-created_at')
         keyword = self.request.GET.get('keyword')
         if keyword:
             queryset = queryset.filter(Q(fish_category__title__icontains=keyword)|Q(place__title__icontains=keyword))
@@ -40,7 +40,7 @@ class CategoryResultView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = Article.objects.order_by('-id')
+        queryset = Article.objects.order_by('-created_at')
         keyword = self.request.GET.get('keyword')
         if keyword:
             queryset = queryset.filter(Q(fish_category__title__icontains=keyword))
@@ -69,7 +69,7 @@ class PlaceResultView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = Article.objects.order_by('-id')
+        queryset = Article.objects.order_by('-created_at')
         keyword = self.request.GET.get('keyword')
         if keyword:
             queryset = queryset.filter(Q(place__title__icontains=keyword))

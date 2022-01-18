@@ -16,7 +16,7 @@ class IndexView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = Article.objects.order_by('id')
+        queryset = Article.objects.order_by('-created_at')
         return queryset
 
 index = IndexView.as_view()
@@ -36,7 +36,7 @@ class EveryFishResultView(ListView):
 
 
     def get_queryset(self):
-        queryset = Article.objects.order_by('-id')
+        queryset = Article.objects.order_by('-created_at')
         return queryset
 
 every_result = EveryFishResultView.as_view()
