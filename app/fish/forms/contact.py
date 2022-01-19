@@ -4,7 +4,7 @@ from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 
 
-
+# 問い合わせ
 class ContactForm(forms.Form):
     name = forms.CharField(
         label='',

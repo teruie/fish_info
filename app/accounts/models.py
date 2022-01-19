@@ -7,7 +7,7 @@ from accounts.fields import LowerCharField
 
 
 
-
+# カスタムユーザー
 class CustomUserManager(UserManager):
 
     use_in_migrations = True
@@ -37,7 +37,7 @@ class CustomUserManager(UserManager):
         return self._create_user(username, password, **extra_fields)
 
 
-
+# ユーザー
 class User(AbstractBaseUser, PermissionsMixin):
     
     class Meta:

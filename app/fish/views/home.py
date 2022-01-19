@@ -1,10 +1,8 @@
 from django.views.generic import ListView
-
 from fish.models import Article, Profile
 
 
-
-
+# メイン画面
 class IndexView(ListView):
     model = Article
     paginate_by = 6
@@ -14,7 +12,7 @@ class IndexView(ListView):
         context = super().get_context_data(*args, **kwargs)
         context['profile_list'] = Profile.objects.filter(user_id=self.request.user.id)
         return context
-
+    
     def get_queryset(self):
         queryset = Article.objects.order_by('-created_at')
         return queryset

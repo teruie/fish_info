@@ -13,13 +13,12 @@ from fish.forms import ArticleForm, CommentCreateForm
 
 
 
-#投稿作成
+# 作成
 class ArticleCreateView(CreateView, LoginRequiredMixin):
     template_name = 'fish/article_new.html'
     success_url = reverse_lazy('fish:index')
     form_class = ArticleForm
     model = Article
-
 
     def form_valid(self, form):
         form = form.save(commit=False)
@@ -33,7 +32,7 @@ class ArticleCreateView(CreateView, LoginRequiredMixin):
 article_create = ArticleCreateView.as_view()
 
 
-#投稿画面詳細
+# 詳細
 class ArticlDetailview(DetailView):
     template_name = 'fish/article_detail.html'
     model = Article
@@ -48,7 +47,7 @@ class ArticlDetailview(DetailView):
 article_detail = ArticlDetailview.as_view()
 
 
-#投稿消去
+#消去
 class ArticleDeleteview(DeleteView, LoginRequiredMixin):
     model = Article
     success_url = reverse_lazy('fish:index')
@@ -62,7 +61,7 @@ class ArticleDeleteview(DeleteView, LoginRequiredMixin):
 article_delete = ArticleDeleteview.as_view()
 
 
-#投稿変更
+#変更
 class ArticleUpdateView(UpdateView, LoginRequiredMixin):
     template_name = 'fish/article_edit.html'
     form_class = ArticleForm

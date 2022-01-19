@@ -8,9 +8,8 @@ from fish.models import Article, Comment
 from fish.forms import CommentCreateForm
 
 
-
+# コメント
 class CommentCreate(CreateView):
-    """コメント投稿ページのビュー"""
     template_name = 'fish/comment_form.html'
     model = Comment
     form_class = CommentCreateForm

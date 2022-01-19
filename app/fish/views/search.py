@@ -1,12 +1,10 @@
 from django.contrib import messages
-
 from django.views.generic import TemplateView, ListView
-
 from fish.models import Article, Category, Place, Profile
-
 from django.db.models import Q
 
 
+# 検索
 class SearchView(ListView):
     model = Article
     template_name = 'search/search.html'
@@ -22,13 +20,15 @@ class SearchView(ListView):
 
 search = SearchView.as_view()
 
-#魚種検索ページ
+
+# 魚種検索ページ
 class CategorySearchView(TemplateView):
     template_name = 'search/category_search.html'
 
 category_search = CategorySearchView.as_view()
 
-#魚種検索結果
+
+# 魚種検索結果
 class CategoryResultView(ListView):
     model = Article
     template_name = 'search/category_result.html'
@@ -50,14 +50,14 @@ class CategoryResultView(ListView):
 category_result = CategoryResultView.as_view()
 
 
-#場所検索ページ
+# 場所検索
 class PlaceSearchView(TemplateView):
     template_name = 'search/place_search.html'
 
 place_search = PlaceSearchView.as_view()
 
 
-#場所検索結果
+# 場所検索結果
 class PlaceResultView(ListView):
     model = Article
     template_name = 'search/place_result.html'

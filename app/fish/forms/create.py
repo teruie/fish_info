@@ -2,7 +2,7 @@ from django import forms
 from django.conf import settings
 from fish.models import Article, Category, Place, Profile, Comment
 
-
+# 投稿
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
@@ -12,13 +12,13 @@ class ArticleForm(forms.ModelForm):
             'fishing_comment': forms.Textarea(attrs={'class': 'text',}),
         }
 
-
+# プロフィール
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['user_name', 'icon', 'header', 'text']
 
-
+# カテゴリー
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
@@ -28,7 +28,7 @@ class CategoryForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'textinputclass',}),
         }
 
-
+# 場所
 class PlaceForm(forms.ModelForm):
     class Meta:
         model = Place

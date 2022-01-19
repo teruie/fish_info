@@ -1,13 +1,10 @@
 from django.views.generic import TemplateView
-
 from django.views.generic.edit import FormView
-
 from django.urls import reverse_lazy
-
 from fish.forms import ContactForm
 
 
-#お問い合わせフォーム
+# お問い合わせ
 class ContactFormView(FormView):
     template_name = 'contact/contact_form.html'
     form_class = ContactForm
@@ -20,7 +17,7 @@ class ContactFormView(FormView):
 contact_form = ContactFormView.as_view()
 
 
-
+# 問い合わせ完了
 class ContactResultView(TemplateView):
     template_name = 'contact/contact_result.html'
 

@@ -5,7 +5,7 @@ from django.dispatch import receiver
 import uuid
 
 
-
+# カテゴリー
 class Category(models.Model):
     title = models.CharField(verbose_name='魚種入力', max_length=20)
     
@@ -18,7 +18,7 @@ class Category(models.Model):
       return str(self.title) 
 
 
-
+# 場所
 class Place(models.Model):
     title = models.CharField(verbose_name='場所入力', max_length=20)
 
@@ -30,9 +30,8 @@ class Place(models.Model):
       return str(self.title) 
 
 
-
+# 投稿
 class Article(models.Model):
-
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False, db_index=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(verbose_name='タイトル',max_length=30)
@@ -53,7 +52,7 @@ class Article(models.Model):
         return str(self.id)
         
 
-
+# コメント
 class Comment(models.Model):
     name = models.CharField('名前', max_length=255, default='名無し')
     text = models.TextField('本文')
@@ -67,9 +66,8 @@ class Comment(models.Model):
         return self.text[:20]
 
 
-
+# プロフィール
 class Profile(models.Model):
-
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False, db_index=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='user_profile')
     user_name = models.CharField(default='ネーム', verbose_name='ユーザーネーム', max_length=10)
@@ -83,7 +81,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return str(self.id)
-
 
 
 @receiver(post_save, sender=get_user_model())

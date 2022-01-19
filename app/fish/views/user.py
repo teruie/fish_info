@@ -1,16 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin 
-
 from django.views.generic import UpdateView, DetailView
-
 from django.urls import reverse
-
 from fish.models import Article, Profile
-
 from fish.forms import ProfileForm
 
 
-
-#Userpage表示
+# ユーザーページ
 class UserPageDetailView(DetailView):
     template_name = 'profile/mypage.html'
     model = Profile
@@ -24,7 +19,7 @@ mypage_detail = UserPageDetailView.as_view()
 
 
 
-#Mypageのページング
+# ユーザーページング
 class UserPadingDetailView(DetailView):
     template_name = 'profile/mypading.html'
     model = Profile
@@ -37,8 +32,7 @@ class UserPadingDetailView(DetailView):
 mypage_pading = UserPadingDetailView.as_view()
 
 
-
-#プロフィール編集画面
+# プロフィール編集
 class UserPageUpdateView(UpdateView, LoginRequiredMixin):
     template_name = 'profile/profile_edit.html'
     form_class = ProfileForm
