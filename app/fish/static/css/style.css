@@ -3,7 +3,7 @@ html, body {
   }
   
   .container {
-    background-color: #E8E8E8;
+    background-color: #E1E1E1;
     overflow: auto;
   }
 
@@ -26,6 +26,7 @@ html, body {
 
   .header-h1 {
     margin-left: 40px;
+    width: 75px;
   }
 
   .search_container{
