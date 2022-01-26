@@ -12,6 +12,22 @@
     border-radius: 10px 10px 10px 10px;
   }
 
+  .rotateY{
+    animation-name:rotateYAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes rotateYAnime{
+    from{
+      transform: rotateY(0);
+      }
+    to{
+      transform: rotateY(-360deg);
+      }
+  }
+  
+
   .img-radius {
     border-radius: 10px 10px 0px 0px;
     border-bottom: 1px solid #000000;
@@ -89,7 +105,31 @@
       width: 315px;
     height: 205px;
     border-radius: 50px 50px 50px 50px;
+    animation-delay: 1s;
   }
+
+  .box{
+    opacity: 0;
+  }
+
+  .fadeUp {
+    animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    }
+    @keyframes fadeUpAnime{
+      from {
+        opacity: 0;
+      transform: translateY(100px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateY(0);
+      }
+    }
+
 
   .category_img{
     width: 315px;
